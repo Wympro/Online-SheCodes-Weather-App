@@ -1,0 +1,84 @@
+body {
+  background: #004445;
+  color: whitesmoke;
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+}
+h1 {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 40px;
+}
+.umbrellaIcon {
+  position: relative;
+}
+h2 {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 50px;
+  text-align: center;
+}
+.enterCity {
+  font-family: "Heebo", sans-serif;
+}
+.todayIcon {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  color: rgb(236, 196, 108);
+  text-align: center;
+}
+.todayInfo {
+  text-align: center;
+  font-size: 30px;
+}
+.todayTempandTime {
+  text-align: center;
+}
+.todayTemp {
+  padding: 1px;
+}
+.todayTime {
+  padding: 7px;
+}
+.fiveDays {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.card-text {
+  padding-top: 5px;
+}
+.card-body {
+  padding: 0;
+  text-align: center;
+}
+.card-header {
+  text-align: center;
+}
+.bi-cloud-sun-fill {
+  color: rgb(150, 191, 218);
+}
+.meditation {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 25px;
+  background: rgb(81, 191, 206);
+  padding-inline: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: solid;
+  border-radius: 30px;
+  border-color: rgb(81, 191, 206);
+}
+.meditation:hover {
+  background: rgb(255, 101, 132);
+  border-color: rgb(255, 101, 132);
+  cursor: pointer;
+}
+.linktoHead {
+  padding-top: 20px;
+}
+button {
+  background: rgb(230, 198, 110);
+  font-family: "Heebo", sans-serif;
+  border: none;
+  border-radius: 5px;
+}
