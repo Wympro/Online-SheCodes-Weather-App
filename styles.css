@@ -32,12 +32,13 @@ h2 {
 }
 .todayTempandTime {
   text-align: center;
+  font-size: 36px;
 }
 .todayTemp {
   padding: 1px;
 }
 .todayTime {
-  padding: 7px;
+  padding: 15px;
 }
 .fiveDays {
   display: block;
@@ -87,4 +88,13 @@ button {
   padding-top: 20px;
   color: white;
   font-size: small;
+}
+.units {
+  position: relative;
+  font-size: 20px;
+  top: -15px;
+}
+.degreeUnits {
+  text-decoration: none;
+  color: whitesmoke;
 }
