@@ -82,3 +82,9 @@ button {
   border: none;
   border-radius: 5px;
 }
+.codeLink {
+  display: block;
+  padding-top: 20px;
+  color: white;
+  font-size: small;
+}
