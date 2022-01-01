@@ -32,9 +32,9 @@ function showTemperature(response) {
   let description = response.data.weather[0].description;
   let descriptionShow = document.querySelector("#description");
   descriptionShow.innerHTML = `${description}`;
-  let precipitation = response.data.precip;
-  let precipitationShow = document.querySelector("#precipitation");
-  precipitationShow.innerHTML = `${precipitation}`;
+  let rain = response.data.rain;
+  let rainShow = document.querySelector("#precipitation");
+  rainShow.innerHTML = `${rain}`;
   let wind = Math.round(response.data.wind.speed);
   let windShow = document.querySelector("#wind");
   windShow.innerHTML = `${wind}`;
@@ -44,9 +44,13 @@ function showTemperature(response) {
   let feels = Math.round(response.data.main.feels_like);
   let feelsShow = document.querySelector("#feels");
   feelsShow.innerHTML = `${feels}`;
-
   let timeShow = document.querySelector("#timeToday");
   timeShow.innerHTML = formatDate(response.data.dt * 1000);
+  let iconShow = document.querySelector("#Currenticon");
+  iconShow.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function enteringCity(event) {
