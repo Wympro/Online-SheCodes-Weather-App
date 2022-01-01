@@ -23,9 +23,9 @@ h2 {
   display: block;
   margin: 0 auto;
   padding-bottom: 15px;
-  color: rgb(236, 196, 108);
   text-align: center;
 }
+
 .todayInfo {
   text-align: center;
   font-size: 30px;
@@ -37,8 +37,14 @@ h2 {
 .todayTemp {
   padding: 1px;
 }
-.todayTime {
+.todayDescription {
   padding: 15px;
+}
+.lastUpdated {
+  font-size: 20px;
+}
+.todayTime {
+  font-size: 20px;
 }
 .fiveDays {
   display: block;
