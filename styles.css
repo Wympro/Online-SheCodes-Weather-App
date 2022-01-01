@@ -98,3 +98,6 @@ button {
   text-decoration: none;
   color: whitesmoke;
 }
+.todayDescription {
+  text-transform: capitalize;
+}
