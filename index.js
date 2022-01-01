@@ -32,9 +32,7 @@ function showTemperature(response) {
   let description = response.data.weather[0].description;
   let descriptionShow = document.querySelector("#description");
   descriptionShow.innerHTML = `${description}`;
-  let rain = response.data.rain;
-  let rainShow = document.querySelector("#precipitation");
-  rainShow.innerHTML = `${rain}`;
+
   let wind = Math.round(response.data.wind.speed);
   let windShow = document.querySelector("#wind");
   windShow.innerHTML = `${wind}`;
