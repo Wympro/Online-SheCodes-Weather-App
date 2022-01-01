@@ -1,24 +1,26 @@
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day} ${hour}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let time = document.querySelector("#timeToday");
-time.innerHTML = `${day} ${hour}:${minutes}`;
 
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -42,6 +44,9 @@ function showTemperature(response) {
   let feels = Math.round(response.data.main.feels_like);
   let feelsShow = document.querySelector("#feels");
   feelsShow.innerHTML = `${feels}`;
+
+  let timeShow = document.querySelector("#timeToday");
+  timeShow.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function enteringCity(event) {
