@@ -19,7 +19,7 @@ if (minutes < 10) {
 }
 let time = document.querySelector("#timeToday");
 time.innerHTML = `${day} ${hour}:${minutes}`;
-//HMK 5
+
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureShow = document.querySelector("#currentTemp");
@@ -27,6 +27,21 @@ function showTemperature(response) {
   let city = response.data.name;
   let cityNameShow = document.querySelector("h2");
   cityNameShow.innerHTML = `${city}`;
+  let description = response.data.weather[0].description;
+  let descriptionShow = document.querySelector("#description");
+  descriptionShow.innerHTML = `${description}`;
+  let precipitation = response.data.precip;
+  let precipitationShow = document.querySelector("#precipitation");
+  precipitationShow.innerHTML = `${precipitation}`;
+  let wind = Math.round(response.data.wind.speed);
+  let windShow = document.querySelector("#wind");
+  windShow.innerHTML = `${wind}`;
+  let humidity = response.data.main.humidity;
+  let humidityShow = document.querySelector("#humidity");
+  humidityShow.innerHTML = `${humidity}`;
+  let feels = Math.round(response.data.main.feels_like);
+  let feelsShow = document.querySelector("#feels");
+  feelsShow.innerHTML = `${feels}`;
 }
 
 function enteringCity(event) {
