@@ -47,7 +47,7 @@ function showTemperature(response) {
   let iconShow = document.querySelector("#Currenticon");
   iconShow.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
   );
 }
 
