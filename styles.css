@@ -83,7 +83,7 @@ h2 {
 .linktoHead {
   padding-top: 20px;
 }
-button {
+.geoButton {
   background: rgb(230, 198, 110);
   font-family: "Heebo", sans-serif;
   border: none;
@@ -106,4 +106,8 @@ button {
 }
 .todayDescription {
   text-transform: capitalize;
+}
+.searchButton {
+  background: rgb(230, 198, 110);
+  color: black;
 }
