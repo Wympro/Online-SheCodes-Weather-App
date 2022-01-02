@@ -51,20 +51,22 @@ function showTemperature(response) {
   );
 }
 
+function search(city) {
+  let apiKey = "f07941ab7a742cad6ad28a820a278bcb";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(url).then(showTemperature);
+}
+
 function enteringCity(event) {
   event.preventDefault();
-  let cityInput = document.querySelector("#cityEntered");
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${cityInput.value}`;
-  let apiKey = "f07941ab7a742cad6ad28a820a278bcb";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=imperial`;
-  axios.get(url).then(showTemperature);
+  let city = document.querySelector("#cityEntered").value;
+  search(city);
 }
 
 let form = document.querySelector("form");
 form.addEventListener("submit", enteringCity);
 
-//HMK5GEO
+//GEO
 
 function retrievePosition(position) {
   let apiKey = "f07941ab7a742cad6ad28a820a278bcb";
@@ -80,3 +82,5 @@ function getCurrentPosition() {
 
 let button = document.querySelector("#currentLocationButton");
 button.addEventListener("click", getCurrentPosition);
+
+search("New York");
