@@ -100,9 +100,17 @@ h2 {
   font-size: 20px;
   top: -15px;
 }
-.degreeUnits {
-  text-decoration: none;
+
+.active {
   color: whitesmoke;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
 }
 .todayDescription {
   text-transform: capitalize;
@@ -110,4 +118,6 @@ h2 {
 .searchButton {
   background: rgb(230, 198, 110);
   color: black;
+  border: rgb(230, 198, 110);
+  border-radius: 5px;
 }
