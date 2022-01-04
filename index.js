@@ -26,6 +26,9 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureShow = document.querySelector("#currentTemp");
   temperatureShow.innerHTML = `${temperature}`;
+
+  fahrenheitTemp = Math.round(response.data.main.temp);
+
   let city = response.data.name;
   let cityNameShow = document.querySelector("h2");
   cityNameShow.innerHTML = `${city}`;
@@ -84,3 +87,30 @@ let button = document.querySelector("#currentLocationButton");
 button.addEventListener("click", getCurrentPosition);
 
 search("San Diego");
+
+//Unit conversion
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let currentTempDisplay = document.querySelector("#currentTemp");
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  currentTempDisplay.innerHTML = fahrenheitTemp;
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let currentTempDisplay = document.querySelector("#currentTemp");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let celsiusTemp = (fahrenheitTemp - 32) / 1.8;
+  currentTempDisplay.innerHTML = Math.round(celsiusTemp);
+}
+
+let fahrenheitTemp = null;
+
+let fahrenheitLink = document.querySelector("#degreeTypeF");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#degreeTypeC");
+celsiusLink.addEventListener("click", showCelsiusTemp);
