@@ -22,12 +22,35 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 
+function showForecast() {
+  let forecastShow = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+  <div class="weatherForcastDate">${day}</div>
+  <img src="#"/>
+  <div class="weatherForcastTemp">
+    <span class="weatherForcastTempMax"> 80° | </span>
+    <span class="weatherForcastTempMin"> 30° </span>
+  </div>
+</div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastShow.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureShow = document.querySelector("#currentTemp");
   temperatureShow.innerHTML = `${temperature}`;
 
   fahrenheitTemp = Math.round(response.data.main.temp);
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
 
   let city = response.data.name;
   let cityNameShow = document.querySelector("h2");
@@ -114,3 +137,7 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#degreeTypeC");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
+//Forecast
+
+showForecast();
