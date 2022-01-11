@@ -40,6 +40,10 @@ h2 {
 .todayDescription {
   padding: 15px;
 }
+.updated {
+  text-align: center;
+  padding-top: 20px;
+}
 .lastUpdated {
   font-size: 20px;
 }
