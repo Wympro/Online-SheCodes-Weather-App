@@ -22,8 +22,6 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 
-//Forecast
-
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -67,8 +65,6 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(showForecast);
 }
 
-//Current Temp
-
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureShow = document.querySelector("#currentTemp");
@@ -96,7 +92,7 @@ function showTemperature(response) {
   feelsShow.innerHTML = `${feels}`;
   let timeShow = document.querySelector("#timeToday");
   timeShow.innerHTML = formatDate(response.data.dt * 1000);
-  let iconShow = document.querySelector("#Currenticon");
+  let iconShow = document.querySelector("#currentIcon");
   iconShow.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
@@ -125,8 +121,6 @@ function enteringCity(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", enteringCity);
 
-//GEO
-
 function retrievePosition(position) {
   let apiKey = "f07941ab7a742cad6ad28a820a278bcb";
   let lat = position.coords.latitude;
@@ -143,8 +137,6 @@ let button = document.querySelector("#currentLocationButton");
 button.addEventListener("click", getCurrentPosition);
 
 search("San Diego");
-
-//Unit conversion
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
